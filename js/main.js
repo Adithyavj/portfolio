@@ -114,3 +114,14 @@ window.addEventListener("load",()=>{
         document.querySelector(".preloader").style.display="none";
     },600)
 })
+
+// Submit contact form to google sheet
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwnggMGlDg03wFgGk0pVUhmI4BGTQANt18nb-Mx8APSPdnj0on-jMvvxGEv68RqVwFi/exec'
+const form = document.forms['submit-to-google-sheet']
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => console.log('Success!', response))
+    .catch(error => console.error('Error!', error.message))
+})
