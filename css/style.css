@@ -467,7 +467,7 @@ img{
 
 }
 .home-section .home-text p{
-    color: var(--text-black-300);
+    color: var(--text-black-600);
     font-size: 18px;
     text-transform: capitalize;
     margin: 0;
